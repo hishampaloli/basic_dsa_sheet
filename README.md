@@ -1,0 +1,3 @@
+# DocumentingdataStructureJourney
+
+PLEASE FOLLOW ME
