@@ -1,6 +1,6 @@
 # DocumentingdataStructureJourney
 
-❤️ PLEASE FOLLOW ME ❤️ code edthit like and follow cheyyanam 🤨
+❤️ PLEASE FOLLOW US ❤️ code edthit like and follow cheyyanam 🤨
 
 authors:
 hisham paloli - javascript,
