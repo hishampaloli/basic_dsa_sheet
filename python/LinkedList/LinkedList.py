@@ -51,11 +51,9 @@ class LinkedList:
 
         if index< 0 or index>= self.get_length():
             raise Exception("index out of index")
-
         if index == 0:
             self.insert_at_start(data)
             return
-
         count = 0
         itr = self.head
         while itr:
@@ -119,6 +117,7 @@ if __name__ == "__main__":
     ll.insert_at_end(1000)
     ll.insert_at_end(10000)
     ll.insert_at_end(100000)
+    ll.insert_at_start(12)
     ll.print()
     ll.insert_at_start(2)
     ll.insert_at_end(20)
@@ -130,7 +129,7 @@ if __name__ == "__main__":
     ll.print()
     ll.insert_at(301, 3)
     ll.insert_after_value(20, 2001)
-    ll.update(301, 0)
+    ll.update(12, 301)
     ll.get_length()
     ll.print()
 
