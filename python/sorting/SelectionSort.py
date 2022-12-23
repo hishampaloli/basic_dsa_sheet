@@ -1,15 +1,11 @@
+#selction sort
 def selectionSort(array):
-    size = len(array)
-    for step in range(size):
-        min_idx = step
-        for i in range(step + 1, size):
-            #sort element using "<" or ">"
-            if array[i]< array[min_idx]:
-                min_idx = i
-        
-        #swap min at correction postion
-        array[step] , array[min_idx] = array[min_idx], array[step]
-    return array
+    for i in range(len(array)-1):
+        for j in range(i+1, len(array)):
+            if array[i] > array[j]:
+                array[j], array[i] = array[i], array[j]
 
-data = [1, 5, -4, 5, 1, 3, 0, -4, 1, 5, 44, 9]
-print(selectionSort(data))
+if __name__ == "__main__":
+    array = [4, 5, 12, 5, 78, 16, 34, 1, 90, -90]
+    selectionSort(array)
+    print(array)

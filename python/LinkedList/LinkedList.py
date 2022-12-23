@@ -102,9 +102,29 @@ class LinkedList:
         itr = self.head
         llstr = ''
         while itr:
-            llstr += str(itr.data) + "->"
+            llstr += str(itr.data) + "->" if itr.next else str(itr.data)
             itr = itr.next
         print("Current linked list :" + llstr)
+
+    def reverse_linked_list(self):
+        if self.isEmpty():
+            print("this linked list is empty")
+            return
+        else:
+            previous = None
+            current = self.head
+            after = current.next
+
+            while current:
+                current.next = previous
+                previous = current
+                current = after
+                if after:
+                    after = after.next
+
+            self.head = previous
+            print("reversed")
+            self.print()
         
 
 
@@ -119,6 +139,10 @@ if __name__ == "__main__":
     ll.insert_at_end(100000)
     ll.insert_at_start(12)
     ll.print()
+    list_data = ["renjith", "amal", "akhil"]
+    for i in list_data:
+        ll.insert_at_end(i)
+    ll.print()
     ll.insert_at_start(2)
     ll.insert_at_end(20)
     ll.delete_value(100)
@@ -132,6 +156,7 @@ if __name__ == "__main__":
     ll.update(12, 301)
     ll.get_length()
     ll.print()
+    ll.reverse_linked_list()
 
 
 
