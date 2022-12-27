@@ -5,24 +5,26 @@ class Node:
 
 class Stack:
     def __init__(self):
-        self.head = None
+        self.top = None
 
     def isempty(self):
-        return self.head == None
+        return self.top == None
 
     def push(self, data):
+        node = Node(data)
         if self.isempty():
-            self.head = Node(data, None)
+            self.top = node
         else:
-            self.head = Node(data, self.head)
+            node.next = self.top
+            self.top = node
 
     def pop(self):
         if self.isempty():
             print('this stack is empty')
             return
         else:
-            popped = self.head
-            self.head = self.head.next
+            popped = self.top
+            self.top = self.top.next
             print(popped.data)
             return popped
 
@@ -31,7 +33,7 @@ class Stack:
             print('this stack is empty')
             return
         else:
-            itr = self.head
+            itr = self.top
             stack_view = ''
             while itr:
                 stack_view += str(itr.data) + '->'
