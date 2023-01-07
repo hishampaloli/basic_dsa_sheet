@@ -1,4 +1,4 @@
- class UndirectionalGraph {
+  class UndirectionalGraph {
      constructor() {
          this.list = {};
      }
@@ -70,7 +70,8 @@
 
 
      DFSIterative(start) {
-         const stack = [start]
+
+          const stack = [start]
          const result = [];
          const visited = {}
          let currentVertex
@@ -94,6 +95,7 @@
          const queue = [start]
          const result = [];
          const visited = {};
+          visited[start] = true
          
          let currentVertex
 
@@ -102,6 +104,7 @@
              result.push(currentVertex);
 
              this.list[currentVertex].forEach(neighbor => {
+                  console.log(visited[neighbor])
                  if(!visited[neighbor]){
                      visited[neighbor] = true
                      queue.push(neighbor)
