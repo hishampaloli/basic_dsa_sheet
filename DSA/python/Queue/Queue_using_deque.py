@@ -8,7 +8,10 @@ class Queue:
         self.elements.appendleft(val)
 
     def dequeue(self):
-        self.elements.pop()
+        if self.is_empty():
+            self.elements.pop()
+        else:
+            print("empty string")
 
     def is_empty(self):
         return len(self.elements) == 0
