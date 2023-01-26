@@ -7,4 +7,7 @@ heapq.heapify(data)
 print(data)
 
 print(heapq.heappop(data))
+
+heapq.heappush(data, 10)
+
 print(data)  

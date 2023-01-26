@@ -4,6 +4,7 @@ class Node:
         self.children = {}
         self.iscomplete = False
 
+
 class Trie:
     def __init__(self):
         self.root = Node("")
@@ -14,7 +15,6 @@ class Trie:
             if char in node.children:
                 node = node.children[char]
             else:
- 
                 new_node = Node(char)
                 node.children[char] = new_node
                 node = new_node
@@ -52,4 +52,4 @@ tr.insert("hello")
 tr.insert("how ")
 tr.insert("her")
 
-print(tr.search("hello"))
+print(tr.search("he"))

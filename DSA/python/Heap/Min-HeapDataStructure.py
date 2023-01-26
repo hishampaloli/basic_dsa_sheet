@@ -1,11 +1,11 @@
 def buildHeap(array):
-    n = int((len(array)//2) - 1)
+    n = int((len(array)//2)) -1
     for i in range(n, -1, -1):
         min_heapify(array, i)
 
 def min_heapify(array, k):
-    left = 2 * k 
-    right = 2 * k + 1
+    left = 2 * k + 1
+    right = 2 * k + 2
     if left < len(array) and array[left] < array[k]:
         smallest = left
     else:
@@ -13,7 +13,7 @@ def min_heapify(array, k):
     if right < len(array) and array[right] < array[smallest]:
         smallest = right
 
-    if smallest !=k:
+    if smallest != k:
         array[smallest], array[k] = array[k], array[smallest]
         min_heapify(array, smallest)
 
@@ -35,17 +35,17 @@ def delete(array, num):
     buildHeap(array)
 
 if __name__ == "__main__":
-    # arr = []
-    # insert(arr, 26)
-    # insert(arr, 20)
-    # insert(arr, 10)
-    # insert(arr, 48)
-    # insert(arr, 42)
-    # insert(arr, 39)
-    # insert(arr, 23)
-    # insert(arr, 3)
-    # delete(arr, 20)
-    a = [3, 4, 9, 5, 2]
-    buildHeap(a)
-    print(a)
+    arr = []
+    insert(arr, 26)
+    insert(arr, 20)
+    insert(arr, 10)
+    insert(arr, 48)
+    insert(arr, 42)
+    insert(arr, 39)
+    insert(arr, 23)
+    insert(arr, 3)
+    delete(arr, 20)
+    # a = [48,35,42,15,7,18,24]
+    # buildHeap(a)
+    print(arr)
 
