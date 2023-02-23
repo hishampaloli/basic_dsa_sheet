@@ -160,6 +160,26 @@ class singlyLinkedList{
       current = current.next;
     }
   }
+    
+    findUnique() {
+    const map = new Map();
+    let current = this.head;
+    while (current !== null) {
+      if (map.has(current.val)) {
+        map.set(current.val, false);
+      } else {
+        map.set(current.val, true);
+      }
+      current = current.next;
+    }
+    const unique = [];
+    map.forEach((value, key) => {
+      if (value) {
+        unique.push(key);
+      }
+    });
+    return unique;
+  }
 }
 
 var list = new singlyLinkedList();
