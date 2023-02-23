@@ -138,7 +138,28 @@ class singlyLinkedList{
         }
         return foundMax
     }
-
+    
+    
+    
+     sort(){
+    if (this.head === null || this.head.next === null) {
+      return;
+    }
+    let current = this.head;
+    let index = null;
+    while (current !== null) {
+      index = current.next;
+      while (index !== null) {
+        if (current.val < index.val) {
+          let temp = current.val;
+          current.val = index.val;
+          index.val = temp;
+        }
+        index = index.next;
+      }
+      current = current.next;
+    }
+  }
 }
 
 var list = new singlyLinkedList();
