@@ -123,6 +123,22 @@ class singlyLinkedList{
         }
         return this;
     }
+    
+    
+       largestVal(){
+        let current = this.head;
+        let foundMax = 0
+
+        while(current){
+          console.log(current)
+            if(foundMax < current.val) {
+                foundMax = current.val;
+            }
+            current = current.next
+        }
+        return foundMax
+    }
+
 }
 
 var list = new singlyLinkedList();
