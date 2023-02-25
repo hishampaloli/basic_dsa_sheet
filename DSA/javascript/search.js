@@ -10,7 +10,7 @@ function LinearSearch(arr, val){
 
 
 
-// binary search...
+// binary search..
 
 function binarySearch(arr, val){
     let start = 0;
