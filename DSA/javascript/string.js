@@ -19,4 +19,7 @@ function reversedStrInSentence(sentence) {
   return reversedStrInSentenceOutput.join("")
 }
 
+function palindrome(str){
+ return str.split("").reverse().join("") === str ? 'IsPal' : 'NotPal'
+}
 
