@@ -108,17 +108,40 @@
 
 // TODO: check if a linked list contain cycle
 
-class Solution {
-  isCycle(head) {
-    let slow = head;
-    let fast = head;
-    while (fast && fast.next) {
-      fast = fast.next.next;
-      slow = slow.next;
-      if (fast === slow) {
-        return true;
-      }
-    }
-    return false;
-  }
-}
+// class Solution {
+//   isCycle(head) {
+//     let slow = head;
+//     let fast = head;
+//     while (fast && fast.next) {
+//       fast = fast.next.next;
+//       slow = slow.next;
+//       if (fast === slow) {
+//         return true;
+//       }
+//     }
+//     return false;
+//   }
+// }
+
+// TODO: count the number of node is a loop;
+
+// class Solution {
+//   //Function to find the length of a loop in the linked list.
+//   countNodesinLoop(head) {
+//     let slow = head;
+//     let fast = head;
+//     let count = 0;
+//     let isCyclic = false;
+
+//     while (fast && fast.next) {
+//       fast = fast.next.next;
+//       slow = slow.next;
+
+//       if (isCyclic) count++;
+//       if (isCyclic && fast === slow) break;
+//       if (fast == slow) isCyclic = true;
+//     }
+
+//     return count;
+//   }
+// }
