@@ -46,3 +46,22 @@
 //     }
 //   }
 // }
+
+// TODO: reverse a linked list
+
+// class Solution {
+//   //Function to reverse a linked list.
+//   reverseList(head) {
+//     let current = head;
+//     let next = null;
+//     let prev = null;
+
+//     while (current) {
+//       next = current.next;
+//       current.next = prev;
+//       prev = current;
+//       current = next;
+//     }
+//     return current;
+//   }
+// }
