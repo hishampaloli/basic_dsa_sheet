@@ -145,3 +145,26 @@
 //     return count;
 //   }
 // }
+
+// TODO: Find the Sum of Last N nodes of the Linked List
+
+class Solution {
+  sumOfLastN_Nodes(head, n) {
+    let sum = 0;
+    let length = 0;
+    let current = head;
+    while (current) {
+      length++;
+      current = current.next;
+    }
+    let lastN = length - n;
+    length = 0;
+    while (head) {
+      length++;
+      if (length > lastN) sum += head.data;
+      head = head.next;
+    }
+
+    return sum;
+  }
+}
