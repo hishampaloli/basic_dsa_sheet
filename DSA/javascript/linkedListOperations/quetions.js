@@ -1,5 +1,8 @@
+
+//TODO: get nth node from the end
+
 class Solution {
-  //Function to find the data of nth node from the end of a linked list
+    
   getNthFromLast(head, n) {
     let index = 0;
     let countHead = head;
