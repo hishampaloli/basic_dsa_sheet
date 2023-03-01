@@ -107,7 +107,6 @@ class singlyLinkedList{
         this.length--;
         return current;
         
-        // 2-3-6-2-5
     }
     reverse(){
         var node = this.head;

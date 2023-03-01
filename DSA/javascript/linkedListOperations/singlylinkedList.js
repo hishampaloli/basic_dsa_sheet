@@ -68,15 +68,80 @@
 
 // TODO: number of node in a linked list
 
-class Solution {
-  //Function to count nodes of a linked list.
-  getCount(head) {
-    let numberOfnodes = 0;
+// class Solution {
+//   //Function to count nodes of a linked list.
+//   getCount(head) {
+//     let numberOfnodes = 0;
 
-    while (head) {
-      numberOfnodes++;
-      head = head.next;
-    }
-    return numberOfnodes
-  }
-}
+//     while (head) {
+//       numberOfnodes++;
+//       head = head.next;
+//     }
+//     return numberOfnodes
+//   }
+// }
+
+// TODO: delete a given node from a linked list
+
+// class Solution {
+//   deleteNode(head, x) {
+//     let temp = head;
+//     if (head === null) return null;
+
+//     if (x === 1) {
+//       head = temp.next;
+//       return head;
+//     }
+
+//     for (let i = 1; temp !== null && i < x - 1; i++) {
+//       temp = temp.next;
+//     }
+
+//     if (temp === null || temp.next === null) return null;
+
+//     if (temp.next.next === null) temp.next = null;
+//     else temp.next = temp.next.next;
+
+//     return head;
+//   }
+// }
+
+// TODO: check if a linked list contain cycle
+
+// class Solution {
+//   isCycle(head) {
+//     let slow = head;
+//     let fast = head;
+//     while (fast && fast.next) {
+//       fast = fast.next.next;
+//       slow = slow.next;
+//       if (fast === slow) {
+//         return true;
+//       }
+//     }
+//     return false;
+//   }
+// }
+
+// TODO: count the number of node is a loop;
+
+// class Solution {
+//   //Function to find the length of a loop in the linked list.
+//   countNodesinLoop(head) {
+//     let slow = head;
+//     let fast = head;
+//     let count = 0;
+//     let isCyclic = false;
+
+//     while (fast && fast.next) {
+//       fast = fast.next.next;
+//       slow = slow.next;
+
+//       if (isCyclic) count++;
+//       if (isCyclic && fast === slow) break;
+//       if (fast == slow) isCyclic = true;
+//     }
+
+//     return count;
+//   }
+// }
