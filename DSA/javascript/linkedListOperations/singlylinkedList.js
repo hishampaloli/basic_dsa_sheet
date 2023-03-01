@@ -65,3 +65,18 @@
 //     return current;
 //   }
 // }
+
+// TODO: number of node in a linked list
+
+class Solution {
+  //Function to count nodes of a linked list.
+  getCount(head) {
+    let numberOfnodes = 0;
+
+    while (head) {
+      numberOfnodes++;
+      head = head.next;
+    }
+    return numberOfnodes
+  }
+}
