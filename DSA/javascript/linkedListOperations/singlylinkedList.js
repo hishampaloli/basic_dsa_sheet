@@ -225,3 +225,61 @@
 //         return true
 //     }
 // }
+
+
+// TODO: Insert node at the middle of the linked list
+// class Solution {
+//     //Function to insert a node in the middle of the linked list.
+//     insertInMiddle(head, x)
+//     {
+//         let newNode = new Node(x)
+//         let count = 0;
+//         let current = head;
+//         while(current){
+//             count++;
+//             current = current.next;
+//         }
+//         let middleIndex = count % 2 == 0 ? (count / 2) : ((count - 1) / 2) + 1;
+//         count = 1;
+//         current = head
+        
+//         while(current){
+//             if(count == middleIndex){
+//                  let nextInd = current.next;
+//                  current.next = newNode;
+//                  newNode.next = nextInd
+//             }
+//             current = current.next;
+//             count++
+//         }
+        
+//         return head
+//     }
+    
+// }
+
+
+// TODO: delete the middle node in linked list
+
+// class Solution {
+//     deleteMid(node)
+//     {
+//         let count = 0
+//         let current = head;
+        
+//         while(current){
+//             count++;
+//             current = current.next;
+//         }
+        
+//         let middleIndex = count % 2 == 0 ? (count / 2) + 1 : ((count - 1) / 2) + 1;
+        
+//         for(let i = 1; i< middleIndex - 1; i++){
+//             head = head.next;
+//         }
+        
+        // head.next = head.next.next;
+//         return head
+        
+//     }
+// }
