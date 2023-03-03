@@ -398,7 +398,7 @@
 
 // class Solution {
 //   //Function to remove duplicates from sorted linked list.
-//   removeDuplicates(head) {
+//   frequency(head) {
 //     let freqTable = {};
 
 //     while (head) {
@@ -417,7 +417,7 @@
 // TODO: find unique element in a linked list
 // class Solution {
 //   //Function to remove duplicates from sorted linked list.
-//   removeDuplicates(head) {
+//   findUnique(head) {
 //     let freqTable = {};
 //     let current = head;
 //     while (current) {
@@ -438,11 +438,10 @@
 //   }
 // }
 
-
 //TODO: find the most occurring node in a linked list
 // class Solution {
 //   //Function to remove duplicates from sorted linked list.
-//   removeDuplicates(head) {
+//   MostOccuring(head) {
 //     let freqTable = {};
 //     let current = head;
 //     while (current) {
@@ -463,5 +462,53 @@
 //       head = head.next;
 //     }
 //     console.log(highestNode + " : " + highestOcc);
+//   }
+// }
+
+// TODO: find the sum of unique numbers in linked list;
+// class Solution {
+//   //Function to remove duplicates from sorted linked list.
+//   removeDuplicates(head) {
+//     let freqTable = {};
+//     let current = head;
+//     while (current) {
+//       if (!freqTable[current.data]) {
+//         freqTable[current.data] = 1;
+//       } else {
+//         freqTable[current.data]++;
+//       }
+//       current = current.next;
+//     }
+//     let sumOfUnique = 0;
+
+//     while (head) {
+//       if (freqTable[head.data] == 1) {
+//         sumOfUnique += head.data;
+//       }
+//       head = head.next;
+//     }
+
+//     console.log(sumOfUnique);
+//   }
+// }
+
+// TODO: delete a give value in linked list;
+
+// class Solution {
+//   //Function to remove duplicates from sorted linked list.
+//   removeGivenVal(head, deleteVal) {
+//     let dummyList = new Node(0);
+//     dummyList.next = head;
+//     let current = dummyList;
+
+//     while (current) {
+//       if (current.next && current.next.data == deleteVal) {
+//         current.next = current.next.next;
+//       } else {
+//         current = current.next;
+//       }
+//     }
+
+//     return dummyList.next;
 //   }
 // }
