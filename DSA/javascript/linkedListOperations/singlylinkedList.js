@@ -300,10 +300,7 @@
 //   }
 // }
 
-
-
 // TODO:  delete duplicate form a unsorted linked list;
-
 
 // class Solution {
 //   //Function to remove duplicates from unsorted linked list.
@@ -322,5 +319,78 @@
 //     }
 
 //     return head;
+//   }
+// }
+
+// TODO: Given two linked list of size N1 and N2 respectively of distinct elements, your task is to complete the function countPairs(), which returns the count of all pairs from both lists whose sum is equal to the given value X.
+
+// class Solution {
+
+//         countPairs(head1, head2, x)
+//         {
+//             let h1 = head1;
+//             let h2 = head2
+//             let hashTable = {}
+//             let count = 0
+
+//             while(h1){
+//                 if(!hashTable[h1.data]) hashTable[h1.data] = true;
+//                 h1 = h1.next;
+//             }
+
+//             while(h2){
+//                 if(hashTable[x - h2.data]) count++;
+//                 h2 = h2.next;
+//             }
+//             return count
+//         }
+//     }
+
+// TODO: Delete without head pointer
+
+// class Solution {
+//   deleteNode(del) {
+//     del.data = del.next.data;
+//     del.next = del.next.next;
+//   }
+// }
+
+// // TODO:  Delete even numbers in linked list
+// class Solution {
+//   deleteEven(head, x) {
+//     let dummyList = new Node(0);
+//     dummyList.next = head;
+//     let current = dummyList;
+
+//     while (current) {
+//       if (current.next && current.next.data % 2 == 0) {
+//         current.next = current.next.next;
+//       } else {
+//         current = current.next;
+//       }
+//     }
+//     return dummyList.next;
+//   }
+// }
+
+
+// TODO: remove the nth node from the end of a linked list
+// class Solution {
+//   deleteNode(head, x) {
+//     let dummyList = new Node(0);
+//     dummyList.next = head;
+//     let slow = dummyList;
+//     let fast = dummyList;
+//     for (let i = 1; i <= x; i++) {
+//       fast = fast.next;
+//     }
+
+//     while (fast.next) {
+//       fast = fast.next;
+//       slow = slow.next;
+//     }
+//     slow.next = slow.next.next;
+
+//     return dummyList.next;
 //   }
 // }
