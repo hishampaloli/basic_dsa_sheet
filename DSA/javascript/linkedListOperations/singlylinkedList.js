@@ -208,7 +208,6 @@
 //   }
 // }
 
-
 // TODO: check if two linked list are identical
 // class Solution {
 //     //Function to check whether two linked lists are identical or not.
@@ -226,7 +225,6 @@
 //     }
 // }
 
-
 // TODO: Insert node at the middle of the linked list
 // class Solution {
 //     //Function to insert a node in the middle of the linked list.
@@ -242,7 +240,7 @@
 //         let middleIndex = count % 2 == 0 ? (count / 2) : ((count - 1) / 2) + 1;
 //         count = 1;
 //         current = head
-        
+
 //         while(current){
 //             if(count == middleIndex){
 //                  let nextInd = current.next;
@@ -252,12 +250,11 @@
 //             current = current.next;
 //             count++
 //         }
-        
+
 //         return head
 //     }
-    
-// }
 
+// }
 
 // TODO: delete the middle node in linked list
 
@@ -266,20 +263,64 @@
 //     {
 //         let count = 0
 //         let current = head;
-        
+
 //         while(current){
 //             count++;
 //             current = current.next;
 //         }
-        
+
 //         let middleIndex = count % 2 == 0 ? (count / 2) + 1 : ((count - 1) / 2) + 1;
-        
+
 //         for(let i = 1; i< middleIndex - 1; i++){
 //             head = head.next;
 //         }
-        
-        // head.next = head.next.next;
+
+// head.next = head.next.next;
 //         return head
-        
+
 //     }
+// }
+
+// TODO:  delete duplicate form a sorted linked list;
+
+// class Solution {
+//   //Function to remove duplicates from sorted linked list.
+//   removeDuplicates(head) {
+//     let current = head;
+
+//     while (current) {
+//       if (current.next && current.data == current.next.data) {
+//         current.next = current.next.next;
+//       } else {
+//         current = current.next;
+//       }
+//     }
+
+//     return head;
+//   }
+// }
+
+
+
+// TODO:  delete duplicate form a unsorted linked list;
+
+
+// class Solution {
+//   //Function to remove duplicates from unsorted linked list.
+
+//   removeDuplicates(head) {
+//     let hashTable = {};
+//     let current = head;
+//     while (current) {
+//       if (!hashTable[current.data]) hashTable[current.data] = true;
+
+//       if (current.next && hashTable[current.next.data]) {
+//         current.next = current.next.next;
+//       } else {
+//         current = current.next;
+//       }
+//     }
+
+//     return head;
+//   }
 // }
