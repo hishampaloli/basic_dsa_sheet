@@ -373,7 +373,6 @@
 //   }
 // }
 
-
 // TODO: remove the nth node from the end of a linked list
 // class Solution {
 //   deleteNode(head, x) {
@@ -392,5 +391,77 @@
 //     slow.next = slow.next.next;
 
 //     return dummyList.next;
+//   }
+// }
+
+// TODO: frequency of element in linked list
+
+// class Solution {
+//   //Function to remove duplicates from sorted linked list.
+//   removeDuplicates(head) {
+//     let freqTable = {};
+
+//     while (head) {
+//       if (!freqTable[head.data]) {
+//         freqTable[head.data] = 1;
+//       } else {
+//         let val = freqTable[head.data];
+//         freqTable[head.data] = val + 1;
+//       }
+//       head = head.next;
+//     }
+//     console.log(freqTable);
+//   }
+// }
+
+// TODO: find unique element in a linked list
+// class Solution {
+//   //Function to remove duplicates from sorted linked list.
+//   removeDuplicates(head) {
+//     let freqTable = {};
+//     let current = head;
+//     while (current) {
+//       if (!freqTable[current.data]) {
+//         freqTable[current.data] = 1;
+//       } else {
+//         freqTable[current.data]++;
+//       }
+//       current = current.next;
+//     }
+
+//     while (head) {
+//       if (freqTable[head.data] == 1) {
+//         console.log(head.data);
+//       }
+//       head = head.next;
+//     }
+//   }
+// }
+
+
+//TODO: find the most occurring node in a linked list
+// class Solution {
+//   //Function to remove duplicates from sorted linked list.
+//   removeDuplicates(head) {
+//     let freqTable = {};
+//     let current = head;
+//     while (current) {
+//       if (!freqTable[current.data]) {
+//         freqTable[current.data] = 1;
+//       } else {
+//         freqTable[current.data]++;
+//       }
+//       current = current.next;
+//     }
+//     let highestOcc = 0;
+//     let highestNode;
+//     while (head) {
+//       if (freqTable[head.data] > highestOcc) {
+//         highestOcc = freqTable[head.data];
+//         highestNode = head.data;
+//       }
+//       head = head.next;
+//     }
+//     console.log(highestNode + " : " + highestOcc);
 //   }
 // }
