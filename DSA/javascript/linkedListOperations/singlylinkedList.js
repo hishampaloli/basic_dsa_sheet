@@ -354,3 +354,43 @@
 //     del.next = del.next.next;
 //   }
 // }
+
+// // TODO:  Delete even numbers in linked list
+// class Solution {
+//   deleteEven(head, x) {
+//     let dummyList = new Node(0);
+//     dummyList.next = head;
+//     let current = dummyList;
+
+//     while (current) {
+//       if (current.next && current.next.data % 2 == 0) {
+//         current.next = current.next.next;
+//       } else {
+//         current = current.next;
+//       }
+//     }
+//     return dummyList.next;
+//   }
+// }
+
+
+// TODO: remove the nth node from the end of a linked list
+// class Solution {
+//   deleteNode(head, x) {
+//     let dummyList = new Node(0);
+//     dummyList.next = head;
+//     let slow = dummyList;
+//     let fast = dummyList;
+//     for (let i = 1; i <= x; i++) {
+//       fast = fast.next;
+//     }
+
+//     while (fast.next) {
+//       fast = fast.next;
+//       slow = slow.next;
+//     }
+//     slow.next = slow.next.next;
+
+//     return dummyList.next;
+//   }
+// }
