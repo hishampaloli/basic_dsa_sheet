@@ -555,3 +555,42 @@
 //     if (isLoop) startingNode.next = null;
 //   }
 // }
+
+
+
+// TODO: check if a given linked list is palindrome
+
+// class Solution {
+//     //Function to check whether the list is palindrome.
+//     isPalindrome(head)
+//     {
+//        let slow = head;
+//     let fast = head;
+//     while (fast && fast.next) {
+//       slow = slow.next;
+//       fast = fast.next.next;
+//     }
+
+//     // Reverse the second half of the linked list
+//     let prev = null;
+//     let curr = slow;
+    
+//     while (curr) {
+//       let next = curr.next;
+//       curr.next = prev;
+//       prev = curr;
+//       curr = next;
+//     }
+    
+//     let left = head;
+//     let right = prev;
+    
+//     while(right){
+//         if(right.data !== left.data) return false;
+//         left = left.next;
+//         right = right.next
+//     }
+//     return true
+//     }
+    
+// }
