@@ -512,3 +512,108 @@
 //     return dummyList.next;
 //   }
 // }
+
+
+// TODO: remove loop in a linked list
+// class Solution {
+//   //Function to remove a loop in the linked list.
+//   removeLoop(head) {
+//     let slow = head;
+//     let fast = head;
+//     let loopCount = 0;
+//     let isLoop = false;
+
+//     while (fast && fast.next) {
+//       fast = fast.next.next;
+//       slow = slow.next;
+//       if (isLoop) loopCount++;
+//       if (isLoop && fast == slow) break;
+//       if (fast == slow) isLoop = true;
+//     }
+
+//     let loopStartingNode;
+//     let h1 = head;
+//     let h2 = head;
+
+//     for (let i = 0; i < loopCount; i++) {
+//       h1 = h1.next;
+//     }
+
+//     while (h2) {
+//       if (h2 == h1) {
+//         loopStartingNode = h2;
+//         break;
+//       }
+//       h2 = h2.next;
+//       h1 = h1.next;
+//     }
+
+//     let startingNode = loopStartingNode;
+//     for (let i = 1; i < loopCount; i++) {
+//       startingNode = startingNode.next;
+//     }
+//     if (isLoop) startingNode.next = null;
+//   }
+// }
+
+// TODO: check if a given linked list is palindrome
+
+// class Solution {
+//     //Function to check whether the list is palindrome.
+//     isPalindrome(head)
+//     {
+//        let slow = head;
+//     let fast = head;
+//     while (fast && fast.next) {
+//       slow = slow.next;
+//       fast = fast.next.next;
+//     }
+
+//     // Reverse the second half of the linked list
+//     let prev = null;
+//     let curr = slow;
+
+//     while (curr) {
+//       let next = curr.next;
+//       curr.next = prev;
+//       prev = curr;
+//       curr = next;
+//     }
+
+//     let left = head;
+//     let right = prev;
+
+//     while(right){
+//         if(right.data !== left.data) return false;
+//         left = left.next;
+//         right = right.next
+//     }
+//     return true
+//     }
+
+// }
+
+
+// TODO: insert node into a sorted circular list in sorted way
+// class Solution {
+//   sortedInsert(head, data) {
+//     let newNode = new Node(data);
+//     let dummy = new Node(0);
+//     dummy.next = head;
+//     let current = dummy;
+
+//     while (current && current.next) {
+//       if (current.next && data <= current.next.data) {
+//         let nextNode = current.next;
+//         current.next = newNode;
+//         newNode.next = nextNode;
+//         break;
+//       }
+//       current = current.next;
+//     }
+
+//     current.next = newNode;
+//     return dummy.next;
+//   }
+// }
+
