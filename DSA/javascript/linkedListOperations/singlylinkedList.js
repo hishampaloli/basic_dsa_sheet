@@ -513,7 +513,6 @@
 //   }
 // }
 
-
 // TODO: remove loop in a linked list
 // class Solution {
 //   //Function to remove a loop in the linked list.
@@ -556,8 +555,6 @@
 //   }
 // }
 
-
-
 // TODO: check if a given linked list is palindrome
 
 // class Solution {
@@ -574,17 +571,17 @@
 //     // Reverse the second half of the linked list
 //     let prev = null;
 //     let curr = slow;
-    
+
 //     while (curr) {
 //       let next = curr.next;
 //       curr.next = prev;
 //       prev = curr;
 //       curr = next;
 //     }
-    
+
 //     let left = head;
 //     let right = prev;
-    
+
 //     while(right){
 //         if(right.data !== left.data) return false;
 //         left = left.next;
@@ -592,5 +589,29 @@
 //     }
 //     return true
 //     }
-    
+
+// }
+
+
+// TODO: insert node into a sorted circular list in sorted way
+// class Solution {
+//   sortedInsert(head, data) {
+//     let newNode = new Node(data);
+//     let dummy = new Node(0);
+//     dummy.next = head;
+//     let current = dummy;
+
+//     while (current && current.next) {
+//       if (current.next && data <= current.next.data) {
+//         let nextNode = current.next;
+//         current.next = newNode;
+//         newNode.next = nextNode;
+//         break;
+//       }
+//       current = current.next;
+//     }
+
+//     current.next = newNode;
+//     return dummy.next;
+//   }
 // }
