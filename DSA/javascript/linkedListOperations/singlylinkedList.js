@@ -648,7 +648,7 @@
 // class Solution {
 //   pairWiseSwap(head) {
 //     if (!head || !head.next) return head;
-//     
+//
 //     let current = head;
 //     while (current && current.next) {
 //       const temp = current.data;
@@ -657,5 +657,52 @@
 //       current = current.next.next;
 //     }
 //     return head;
+//   }
+// }
+
+// TODO: sort linked list
+
+// class Solution {
+//   merge(left, right) {
+//     const sortedList = new Node(null);
+//     let current = sortedList;
+
+//     while (left && right) {
+//       if (left.data < right.data) {
+//         current.next = left;
+//         left = left.next;
+//       } else {
+//         current.next = right;
+//         right = right.next;
+//       }
+//       current = current.next;
+//     }
+
+//     current.next = left || right;
+//     return sortedList.next;
+//   }
+
+//   getMid(head) {
+//     let slow = head;
+//     let fast = head;
+//     while (fast.next && fast.next.next) {
+//       slow = slow.next;
+//       fast = fast.next.next;
+//     }
+//     const mid = slow.next;
+//     slow.next = null;
+//     return mid;
+//   }
+
+//   mergeSort(head) {
+//     if (!head || !head.next) {
+//       return head;
+//     }
+
+//     const mid = getMid(head);
+//     const left = mergeSort(head);
+//     const right = mergeSort(mid);
+
+//     return merge(left, right);
 //   }
 // }
