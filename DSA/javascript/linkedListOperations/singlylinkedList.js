@@ -593,7 +593,6 @@
 
 // }
 
-
 // TODO: insert node into a sorted circular list in sorted way
 // class Solution {
 //   sortedInsert(head, data) {
@@ -617,3 +616,95 @@
 //   }
 // }
 
+
+// TODO: rotate linked list k times
+// class Solution {
+//   //Function to rotate a linked list.
+//   rotate(head, k) {
+//     if (!head || k === 0) {
+//       return;
+//     }
+//     let current = head;
+//     let count = 1;
+//     while (count < k && current) {
+//       current = current.next;
+//       count++;
+//     }
+//     if (!current) {
+//       return;
+//     }
+
+//     let kthNode = current;
+//     while (current.next) {
+//       current = current.next;
+//     }
+//     current.next = head;
+//     head = kthNode.next;
+//     kthNode.next = null;
+
+//     return head;
+//   }
+// }
+
+// TODO: pair swap elements in linked list
+// class Solution {
+//   pairWiseSwap(head) {
+//     if (!head || !head.next) return head;
+//
+//     let current = head;
+//     while (current && current.next) {
+//       const temp = current.data;
+//       current.data = current.next.data;
+//       current.next.data = temp;
+//       current = current.next.next;
+//     }
+//     return head;
+//   }
+// }
+
+// TODO: sort linked list
+
+// class Solution {
+//   merge(left, right) {
+//     const sortedList = new Node(null);
+//     let current = sortedList;
+
+//     while (left && right) {
+//       if (left.data < right.data) {
+//         current.next = left;
+//         left = left.next;
+//       } else {
+//         current.next = right;
+//         right = right.next;
+//       }
+//       current = current.next;
+//     }
+
+//     current.next = left || right;
+//     return sortedList.next;
+//   }
+
+//   getMid(head) {
+//     let slow = head;
+//     let fast = head;
+//     while (fast.next && fast.next.next) {
+//       slow = slow.next;
+//       fast = fast.next.next;
+//     }
+//     const mid = slow.next;
+//     slow.next = null;
+//     return mid;
+//   }
+
+//   mergeSort(head) {
+//     if (!head || !head.next) {
+//       return head;
+//     }
+
+//     const mid = getMid(head);
+//     const left = mergeSort(head);
+//     const right = mergeSort(mid);
+
+//     return merge(left, right);
+//   }
+// }
