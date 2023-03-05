@@ -513,6 +513,7 @@
 //   }
 // }
 
+
 // TODO: remove loop in a linked list
 // class Solution {
 //   //Function to remove a loop in the linked list.
@@ -614,6 +615,7 @@
 //     return dummy.next;
 //   }
 // }
+
 
 // TODO: rotate linked list k times
 // class Solution {
