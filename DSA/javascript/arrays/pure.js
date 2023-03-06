@@ -1,4 +1,3 @@
-
 // TODO: check if two arrays are equal in terms of elements
 
 // class Solution {
@@ -22,4 +21,18 @@
 
 //     return true;
 //   }
+// }
+
+// TODO: reverse array in place;
+
+// class Solution {
+//   //Function to reverse array;
+
+// function reverseArray(arr) {
+//   for (let i = 0, j = arr.length - 1; i < arr.length / 2; i++, j--) {
+//     let temp = arr[i];
+//     arr[i] = arr[j];
+//     arr[j] = temp;
+//   }
+// }
 // }
