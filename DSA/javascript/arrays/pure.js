@@ -34,5 +34,69 @@
 //     arr[i] = arr[j];
 //     arr[j] = temp;
 //   }
+// return arr
 // }
+// }
+
+// TODO: find the sum off all elements in an array;
+
+// class Solution {
+//   //Function to find sum of all elements;
+
+// function sum(arr) {
+//   let sum = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     sum += arr[i];
+//   }
+//   return sum;
+// }
+
+// }
+
+// TODO: find the frequency of the elements in the array;
+// function frequency(arr) {
+//   let hashTable = {};
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (hashTable[arr[i]]) hashTable[arr[i]]++;
+//     if (!hashTable[arr[i]]) hashTable[arr[i]] = 1;
+//   }
+//   return hashTable;
+// }
+
+// TODO: find the first non repeating element in the array;
+
+// function firstNonRepeating(arr) {
+//   let hashTable = {};
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (hashTable[arr[i]]) hashTable[arr[i]]++;
+//     if (!hashTable[arr[i]]) hashTable[arr[i]] = 1;
+//   }
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (hashTable[arr[i]] == 1) return arr[i];
+//   }
+
+//   return false;
+// }
+
+
+// TODO: find the element with highest frequency;
+// function highestFreqElement(arr) {
+//   let hashTable = {};
+
+//   let largestCount = 0;
+//   let mostOccuringElement;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (hashTable[arr[i]]) hashTable[arr[i]]++;
+//     if (!hashTable[arr[i]]) hashTable[arr[i]] = 1;
+
+//     if (hashTable[arr[i]] > largestCount) {
+//       largestCount = hashTable[arr[i]];
+//       mostOccuringElement = arr[i];
+//     }
+//   }
+
+//   return mostOccuringElement;
 // }
