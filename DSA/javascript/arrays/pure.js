@@ -81,7 +81,6 @@
 //   return false;
 // }
 
-
 // TODO: find the element with highest frequency;
 // function highestFreqElement(arr) {
 //   let hashTable = {};
@@ -99,4 +98,31 @@
 //   }
 
 //   return mostOccuringElement;
+// }
+
+// TODO: maximum difference between two element in an array
+// function maxDifference(arr) {
+//   let highest = -111111;
+//   let lowest = 11111111;
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (highest <= arr[i]) highest = arr[i];
+//     if (lowest >= arr[i]) lowest = arr[i];
+//   }
+//   return lowest - highest;
+// }
+
+
+// TODO: find the kth largest element in an array;
+
+// function kthLargestElement(arr, k) {
+//   const uniq = new Set();
+//   const kthArray = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     uniq.add(arr[i]);
+//   }
+//   uniq.forEach((el) => kthArray.push(el));
+//   kthArray.sort();
+
+//   return kthArray[k - 1];
 // }
