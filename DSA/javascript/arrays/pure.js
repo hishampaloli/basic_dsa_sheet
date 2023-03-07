@@ -183,7 +183,6 @@
 //   }
 // }
 
-
 // TODO: is correct params;
 
 // function ispar(exp) {
@@ -212,9 +211,8 @@
 //   return stack.length === 0;
 // }
 
-
 // TODO: first element that occurs at least K number of times.
- 
+
 // class Solution {
 //   firstElementKTime(arr, k) {
 //     let occTable = {};
@@ -223,6 +221,77 @@
 //       if (occTable[arr[i]]) occTable[arr[i]]++;
 //       if (!occTable[arr[i]]) occTable[arr[i]] = 1;
 //       if (occTable[arr[i]] == k) return arr[i];
+//     }
+//     return -1;
+//   }
+// }
+
+// TODO: sorting array of 0s,1s and 2s
+// class Solution {
+//   sort012(arr, N) {
+//     let count = [0, 0, 0];
+//     for (let i = 0; i < arr.length; i++) {
+//       count[arr[i]]++;
+//     }
+
+//     let j = 0;
+
+//     for (let i = 0; i < 3; i++) {
+//       console.log(count);
+//       while (count[i] > 0) {
+//         arr[j] = i;
+//         j++;
+//         count[i]--;
+//       }
+//     }
+//     return arr;
+//   }
+// }
+
+// TODO: maximum subarray;
+
+// class Solution {
+//   //Function to find a continuous sub-array which adds up to a given number.
+//   subarraySum(arr, n, s) {
+//     let sum = 0;
+//     let leftIdx = 0;
+//     let rightIdx = 0;
+
+//     for (let i = 0; i < arr.length; i++) {
+//       sum += arr[i];
+//       if (sum == s) {
+//         rightIdx = i;
+//         break;
+//       }
+//       if (sum > s) {
+//         sum = 0;
+//         leftIdx++;
+//         i = leftIdx - 1;
+//         rightIdx = i;
+//       } else {
+//         rightIdx++;
+//       }
+//     }
+
+//     return (leftIdx == 0 && rightIdx == n) || sum !== s
+//       ? [-1]
+//       : [leftIdx + 1, rightIdx + 1];
+//   }
+// }
+
+// TODO: Find the equilibrium point;
+
+// class Solution {
+//   // Function to find equilibrium point in the array.
+//   equilibriumPoint(arr) {
+//     let totalSum = arr.reduce((acc, curr) => acc + curr, 0);
+//     let prefixSum = 0;
+
+//     for (let i = 0; i < arr.length; i++) {
+//       if (prefixSum === totalSum - arr[i] - prefixSum) {
+//         return i + 1;
+//       }
+//       prefixSum += arr[i];
 //     }
 //     return -1;
 //   }
