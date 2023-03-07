@@ -112,7 +112,6 @@
 //   return lowest - highest;
 // }
 
-
 // TODO: find the kth largest element in an array;
 
 // function kthLargestElement(arr, k) {
@@ -125,4 +124,106 @@
 //   kthArray.sort();
 
 //   return kthArray[k - 1];
+// }
+
+// TODO: missing number in consecutive integers
+
+// class Solution {
+//   MissingNumber(array, n) {
+//     let nSum = 0;
+//     let arrSum = 0;
+
+//     for (let i = 0; i < n; i++) {
+//       nSum += i + 1;
+//     }
+//     for (let i = 0; i < array.length; i++) {
+//       arrSum += array[i];
+//     }
+
+//     return nSum - arrSum;
+//   }
+// }
+
+// TODO: find the element which greater than or equal to all the elements to its right side
+// class Solution {
+//   //Function to find the leaders in the array.
+
+//   leaders(arr, n) {
+//     let leader = [];
+//     let max = -1111111;
+
+//     for (let i = arr.length - 1; i >= 0; i--) {
+//       if (max <= arr[i]) {
+//         max = arr[i];
+//         leader.push(max);
+//       }
+//     }
+//     leader.sort((a, b) => b - a);
+
+//     return leader;
+//   }
+// }
+
+// TODO: first repeating element in an array
+// class Solution {
+//   // Function to return the position of the first repeating element.
+//   firstRepeated(arr, n) {
+//     let hashTable = {};
+
+//     for (let i = 0; i < arr.length; i++) {
+//       if (hashTable[arr[i]]) hashTable[arr[i]]++;
+//       if (!hashTable[arr[i]]) hashTable[arr[i]] = 1;
+//     }
+
+//     for (let i = 0; i < arr.length; i++) {
+//       if (hashTable[arr[i]] != 1) return i + 1;
+//     }
+
+//     return -1;
+//   }
+// }
+
+
+// TODO: is correct params;
+
+// function ispar(exp) {
+//   let stack = [];
+
+//   for (let i = 0; i < exp.length; i++) {
+//     if (exp[i] === "(" || exp[i] === "{" || exp[i] === "[") {
+//       stack.push(exp[i]);
+//     } else if (exp[i] === ")" || exp[i] === "}" || exp[i] === "]") {
+//       if (stack.length === 0) {
+//         return false;
+//       }
+
+//       let lastBracket = stack.pop();
+
+//       if (
+//         (lastBracket === "(" && exp[i] !== ")") ||
+//         (lastBracket === "{" && exp[i] !== "}") ||
+//         (lastBracket === "[" && exp[i] !== "]")
+//       ) {
+//         return false;
+//       }
+//     }
+//   }
+
+//   return stack.length === 0;
+// }
+
+
+// TODO: first element that occurs at least K number of times.
+ 
+// class Solution {
+//   firstElementKTime(arr, k) {
+//     let occTable = {};
+
+//     for (let i = 0; i < arr.length; i++) {
+//       if (occTable[arr[i]]) occTable[arr[i]]++;
+//       if (!occTable[arr[i]]) occTable[arr[i]] = 1;
+//       if (occTable[arr[i]] == k) return arr[i];
+//     }
+//     return -1;
+//   }
 // }
