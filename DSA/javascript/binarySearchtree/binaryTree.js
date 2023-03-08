@@ -75,21 +75,21 @@ class binarySearchTree {
     if (!found) return undefined;
     return closest;
   }
-  
-     BFS(){
-        let node = this.root;
-        let data = [];
-        let queue = [];
 
-        queue.push(node);
-        while(queue.length){
-            node = queue.shift();
-            data.push(node.value);
-            if(node.left) queue.push(node.left);
-            if(node.right) queue.push(node.right);
-        }
-        return data;
+  BFS() {
+    let node = this.root;
+    let data = [];
+    let queue = [];
+
+    queue.push(node);
+    while (queue.length) {
+      node = queue.shift();
+      data.push(node.value);
+      if (node.left) queue.push(node.left);
+      if (node.right) queue.push(node.right);
     }
+    return data;
+  }
 
   // Left, Root, Right.
   DFSinOrder() {
@@ -116,7 +116,6 @@ class binarySearchTree {
     return data;
   }
 
-  
   // Left, Right, Root
   DFSpostOrder() {
     let data = [];
@@ -168,6 +167,79 @@ class binarySearchTree {
         return current;
       }
     }
+  }
+
+  delete(value) {
+    if (!this.root) {
+      return null;
+    }
+
+    let current = this.root;
+    let parent = null;
+    let found = false;
+
+    while (current && !found) {
+      if (value < current.value) {
+        parent = current;
+        current = current.left;
+      } else if (value > current.value) {
+        parent = current;
+        current = current.right;
+      } else {
+        found = true;
+      }
+    }
+
+    if (!found) {
+      return null;
+    }
+
+    if (current.left && current.right) {
+      let successor = current.right;
+      let successorParent = current;
+
+      while (successor.left) {
+        successorParent = successor;
+        successor = successor.left;
+      }
+
+      current.value = successor.value;
+      current = successor;
+      parent = successorParent;
+    }
+
+    let child = null;
+
+    if (current.left) {
+      child = current.left;
+    } else if (current.right) {
+      child = current.right;
+    }
+
+    if (!parent) {
+      this.root = child;
+    } else if (current === parent.left) {
+      parent.left = child;
+    } else {
+      parent.right = child;
+    }
+
+    return current;
+  }
+
+  deleteRoot() {
+    if (!this.root) {
+      return null;
+    }
+
+    let current = this.root;
+
+    while (current.left) {
+      current = current.left;
+    }
+
+    this.root.value = current.value;
+    this.delete(current.value);
   }
 }
 
