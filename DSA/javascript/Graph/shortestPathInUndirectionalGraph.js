@@ -13,7 +13,7 @@ class PriorityQueue {
         this.values.sort((a,b) => a.priority - b.priority)
     }
 }
-
+ 
 
 class WeightedGraph {
     constructor() {
@@ -46,7 +46,6 @@ class WeightedGraph {
         const previous = {};
         let path = []
         let smallest;
-        let pathDist
 
         for(let vertex in this.list) {
             if(vertex === start) {

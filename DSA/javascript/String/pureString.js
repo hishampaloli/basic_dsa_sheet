@@ -94,3 +94,30 @@
 //     return "$";
 //   }
 // }
+
+
+// TODO: Par checker
+
+// ispar(str);
+// {
+//   let stack = [];
+
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] == "[" || str[i] == "{" || str[i] == "(") {
+//       stack.push(str[i]);
+//     } else if (str[i] == "]" || str[i] == "}" || str[i] == ")") {
+//       if (stack.length == 0) return false;
+
+//       let lastPushed = stack.pop();
+
+//       if (
+//         (lastPushed == "(" && str[i] !== ")") ||
+//         (lastPushed == "{" && str[i] !== "}") ||
+//         (lastPushed == "[" && str[i] !== "]")
+//       ) {
+//         return false;
+//       }
+//     }
+//   }
+//   return stack.length == 0;
+// }

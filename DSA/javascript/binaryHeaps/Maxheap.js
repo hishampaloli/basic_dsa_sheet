@@ -31,6 +31,7 @@ class MAxbinaryHeap {
         let idx = 0;
         const length = this.values.length;
         const element = this.values[0];
+
         while(true){
             let leftChildIdx = 2 * idx + 1;
             let rightChildIdx = 2 * idx + 2;
@@ -43,6 +44,7 @@ class MAxbinaryHeap {
                     swap = leftChildIdx;
                 }
             }
+            
             if( rightChildIdx < length){
                 rightChild = this.values[rightChildIdx];
                 if(swap === null && rightChildIdx > element || swap !==null && rightChild > leftChild){
