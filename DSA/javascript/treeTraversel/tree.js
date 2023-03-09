@@ -2,12 +2,25 @@
 
 // height(root);
 // {
-//   if (!root) {
-//     return 0;
+//   let height = 0;
+//   const queue = [root];
+
+//   while (queue.length > 0) {
+//     let levelSize = queue.length;
+//     height++;
+//     while (levelSize > 0) {
+//       const currentNode = queue.shift();
+//       if (currentNode.left) {
+//         queue.push(currentNode.left);
+//       }
+//       if (currentNode.right) {
+//         queue.push(currentNode.right);
+//       }
+//       levelSize--;
+//     }
 //   }
-//   let leftHeight = this.height(root.left);
-//   let rightHeight = this.height(root.right);
-//   return Math.max(leftHeight, rightHeight) + 1;
+
+//   return height;
 // }
 
 // TODO: check if two trees are identical
