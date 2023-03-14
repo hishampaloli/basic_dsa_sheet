@@ -20,13 +20,14 @@ const pivot = (arr, start, end = arr.length - 1) => {
 };
 
 function sort(arr, left = 0, right = arr.length - 1) {
-  console.log(arr);
+  
   if (left < right) {
     let pivotIndex = pivot(arr, left, right);
 
     sort(arr, left, pivotIndex - 1);
     sort(arr, pivotIndex + 1, right);
   }
+  
   return arr;
 }
 

@@ -297,7 +297,6 @@
 //   }
 // }
 
-
 // TODO: reverse subArrays
 // class Solution {
 //   //Function to reverse every sub-array group of size k.
@@ -316,5 +315,30 @@
 //     }
 
 //     return arr;
+//   }
+// }
+
+// TODO: Given an array having both positive and negative integers. The task is to compute the length of the largest subarray with sum 0.
+// class Solution {
+//   maxLen(arr) {
+//     let sumMap = {};
+//     let sum = 0;
+//     let maxLength = 0;
+
+//     for (let i = 0; i < arr.length; i++) {
+//       sum += arr[i];
+
+//       if (sum === 0) {
+//         maxLength = i + 1;
+//       }
+
+//       if (sum in sumMap) {
+//         maxLength = Math.max(maxLength, i - sumMap[sum]);
+//       } else {
+//         sumMap[sum] = i;
+//       }
+//     }
+
+//     return maxLength;
 //   }
 // }
