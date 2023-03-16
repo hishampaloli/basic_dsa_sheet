@@ -342,3 +342,25 @@
 //     return maxLength;
 //   }
 // }
+
+
+// TODO: Count pairs with given sum
+
+// class Solution {
+
+//     getPairsCount(arr, n, k) {
+//         let count = 0;
+//         let hash = {};
+
+//         for (let i = 0; i < arr.length; i++) {
+//             const complement = k - arr[i];
+//             if (hash[complement]) {
+//                 count += hash[complement];
+//             }
+//             hash[arr[i]] = hash[arr[i]] ? hash[arr[i]] + 1 : 1;
+//         }
+
+//         return count;
+
+//     }
+// }
