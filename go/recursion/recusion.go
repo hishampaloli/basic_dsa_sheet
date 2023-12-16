@@ -41,6 +41,13 @@ func productOfArray(arr []int) int {
 	return arr[0] * productOfArray(arr[1:])
 }
 
+// function to add recursive input
+func recursiveRange(num int) int {
+	if num == 0 {
+		return 0
+	}
+	return num + recursiveRange(num-1)
+}
 
 func main() {
 	fmt.Println(factorialNormal(5))
