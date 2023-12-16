@@ -67,6 +67,33 @@ func reverse(str string) string {
 	return reverse(str[1:]) + string(str[0])
 }
 
+
+
+// function to check palindrome of a string
+func isPalindrome(str string) bool {
+	if len(str) == 1 {
+		return true
+	}
+	if len(str) == 2 {
+		return str[0] == str[1]
+	}
+	if str[0] == str[len(str)-1] {
+		return isPalindrome(str[1 : len(str)-1])
+	}
+	return false
+}
+
+// function to check someRecursive
+func someRecursive(arr []int, val func(int) bool) bool {
+	if len(arr) == 0 {
+		return false
+	}
+	if val(arr[0]) {
+		return true
+	}
+	return someRecursive(arr[1:], val)
+}
+
 func main() {
 	fmt.Println(factorialNormal(5))
 	fmt.Println(factorialRecursion(5))
