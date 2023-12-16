@@ -338,6 +338,46 @@ func reverseInGroups(arr []int, k int) []int {
 	return arr
 }
 
+// TODO: Compute the length of the largest subarray with sum 0
+func maxLen(arr []int) int {
+	sumMap := make(map[int]int)
+	sum := 0
+	maxLength := 0
+
+	for i := 0; i < len(arr); i++ {
+		sum += arr[i]
+
+		if sum == 0 {
+			maxLength = i + 1
+		}
+
+		if val, ok := sumMap[sum]; ok {
+			maxLength = max(maxLength, i-val)
+		} else {
+			sumMap[sum] = i
+		}
+	}
+
+	return maxLength
+}
+
+// TODO: Count pairs with given sum
+func getPairsCount(arr []int, k int) int {
+	count := 0
+	hash := make(map[int]int)
+
+	for i := 0; i < len(arr); i++ {
+		complement := k - arr[i]
+		if val, ok := hash[complement]; ok {
+			count += val
+		}
+		hash[arr[i]]++
+	}
+
+	return count
+}
+
+
 func main() {
 	
 	
