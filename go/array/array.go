@@ -83,6 +83,67 @@ func frequency(arr []int) map[int]int {
 	return hashTable
 }
 
+// TODO: Find the first non-repeating element in the array
+func firstNonRepeating(arr []int) int {
+	hashTable := make(map[int]int)
+
+	for i := 0; i < len(arr); i++ {
+		if _, ok := hashTable[arr[i]]; ok {
+			hashTable[arr[i]]++
+		}
+		if _, ok := hashTable[arr[i]]; !ok {
+			hashTable[arr[i]] = 1
+		}
+	}
+
+	for i := 0; i < len(arr); i++ {
+		if hashTable[arr[i]] == 1 {
+			return arr[i]
+		}
+	}
+
+	return -1
+}
+
+// TODO: Find the element with the highest frequency
+func highestFreqElement(arr []int) int {
+	hashTable := make(map[int]int)
+
+	largestCount := 0
+	var mostOccurringElement int
+	for i := 0; i < len(arr); i++ {
+		if _, ok := hashTable[arr[i]]; ok {
+			hashTable[arr[i]]++
+		}
+		if _, ok := hashTable[arr[i]]; !ok {
+			hashTable[arr[i]] = 1
+		}
+
+		if hashTable[arr[i]] > largestCount {
+			largestCount = hashTable[arr[i]]
+			mostOccurringElement = arr[i]
+		}
+	}
+
+	return mostOccurringElement
+}
+
+// TODO: Maximum difference between two elements in an array
+func maxDifference(arr []int) int {
+	highest := -111111
+	lowest := 11111111
+
+	for i := 0; i < len(arr); i++ {
+		if highest <= arr[i] {
+			highest = arr[i]
+		}
+		if lowest >= arr[i] {
+			lowest = arr[i]
+		}
+	}
+	return lowest - highest
+}
+
 func main() {
 	
 	
