@@ -57,6 +57,16 @@ func fib(num int) int {
 	}
 	return fib(num-1) + fib(num-2)
 }
+
+
+// function to reverse the value of a string
+func reverse(str string) string {
+	if len(str) <= 1 {
+		return str
+	}
+	return reverse(str[1:]) + string(str[0])
+}
+
 func main() {
 	fmt.Println(factorialNormal(5))
 	fmt.Println(factorialRecursion(5))
