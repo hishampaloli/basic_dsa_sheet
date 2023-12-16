@@ -24,6 +24,24 @@ func factorialRecursion(num int) int {
 }
 
 
+
+// function which does Math.pow()
+func power(base, exponent int) int {
+	if exponent == 1 {
+		return base
+	}
+	return base * power(base, exponent-1)
+}
+
+// function to do product of array
+func productOfArray(arr []int) int {
+	if len(arr) == 0 {
+		return 1
+	}
+	return arr[0] * productOfArray(arr[1:])
+}
+
+
 func main() {
 	fmt.Println(factorialNormal(5))
 	fmt.Println(factorialRecursion(5))
