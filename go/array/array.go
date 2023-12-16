@@ -144,6 +144,53 @@ func maxDifference(arr []int) int {
 	return lowest - highest
 }
 
+// TODO: Find the kth largest element in an array
+func kthLargestElement(arr []int, k int) int {
+	uniq := make(map[int]bool)
+	var kthArray []int
+	for i := 0; i < len(arr); i++ {
+		uniq[arr[i]] = true
+	}
+	for el := range uniq {
+		kthArray = append(kthArray, el)
+	}
+	return kthArray[k-1]
+}
+
+// TODO: Missing number in consecutive integers
+func missingNumber(array []int, n int) int {
+	nSum := 0
+	arrSum := 0
+
+	for i := 0; i < n; i++ {
+		nSum += i + 1
+	}
+	for i := 0; i < len(array); i++ {
+		arrSum += array[i]
+	}
+
+	return nSum - arrSum
+}
+
+// TODO: Find the element which is greater than or equal to all the elements to its right side
+func leaders(arr []int) []int {
+	var leader []int
+	max := -1111111
+
+	for i := len(arr) - 1; i >= 0; i-- {
+		if max <= arr[i] {
+			max = arr[i]
+			leader = append(leader, max)
+		}
+	}
+
+	for i, j := 0, len(leader)-1; i < j; i, j = i+1, j-1 {
+		leader[i], leader[j] = leader[j], leader[i]
+	}
+
+	return leader
+}
+
 func main() {
 	
 	
