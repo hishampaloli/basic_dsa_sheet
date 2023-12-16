@@ -257,6 +257,87 @@ func firstElementKTime(arr []int, k int) int {
 	return -1
 }
 
+// TODO: Sorting array of 0s, 1s, and 2s
+func sort012(arr []int) []int {
+	count := [3]int{0, 0, 0}
+	for i := 0; i < len(arr); i++ {
+		count[arr[i]]++
+	}
+
+	j := 0
+	for i := 0; i < 3; i++ {
+		for count[i] > 0 {
+			arr[j] = i
+			j++
+			count[i]--
+		}
+	}
+	return arr
+}
+
+// TODO: Maximum subarray
+func subarraySum(arr []int, s int) []int {
+	sum := 0
+	leftIdx := 0
+	rightIdx := 0
+
+	for i := 0; i < len(arr); i++ {
+		sum += arr[i]
+		if sum == s {
+			rightIdx = i
+			break
+		}
+		if sum > s {
+			sum = 0
+			leftIdx++
+			i = leftIdx - 1
+			rightIdx = i
+		} else {
+			rightIdx++
+		}
+	}
+
+	if (leftIdx == 0 && rightIdx == len(arr)) || sum != s {
+		return []int{-1}
+	}
+
+	return []int{leftIdx + 1, rightIdx + 1}
+}
+
+// TODO: Find the equilibrium point
+func equilibriumPoint(arr []int) int {
+	totalSum := 0
+	prefixSum := 0
+
+	for i := 0; i < len(arr); i++ {
+		totalSum += arr[i]
+	}
+
+	for i := 0; i < len(arr); i++ {
+		if prefixSum == totalSum-arr[i]-prefixSum {
+			return i + 1
+		}
+		prefixSum += arr[i]
+	}
+	return -1
+}
+
+// TODO: Reverse subarrays
+func reverseInGroups(arr []int, k int) []int {
+	for i := 0; i < len(arr); i += k {
+		left := i
+		right := min(i+k-1, len(arr)-1)
+
+		for left < right {
+			arr[left], arr[right] = arr[right], arr[left]
+			left++
+			right--
+		}
+	}
+
+	return arr
+}
+
 func main() {
 	
 	
