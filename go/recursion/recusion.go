@@ -49,6 +49,14 @@ func recursiveRange(num int) int {
 	return num + recursiveRange(num-1)
 }
 
+
+// function to find fibonacci value of an input
+func fib(num int) int {
+	if num <= 2 {
+		return 1
+	}
+	return fib(num-1) + fib(num-2)
+}
 func main() {
 	fmt.Println(factorialNormal(5))
 	fmt.Println(factorialRecursion(5))
