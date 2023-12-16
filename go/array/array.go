@@ -51,6 +51,38 @@ func areArraysEqual(arr1, arr2 []int, N int) bool {
 	return true
 }
 
+// TODO: Reverse array in place
+func reverseArray(arr []int) []int {
+	for i, j := 0, len(arr)-1; i < len(arr)/2; i, j = i+1, j-1 {
+		arr[i], arr[j] = arr[j], arr[i]
+	}
+	return arr
+}
+
+// TODO: Find the sum of all elements in an array
+func sum(arr []int) int {
+	sum := 0
+	for i := 0; i < len(arr); i++ {
+		sum += arr[i]
+	}
+	return sum
+}
+
+// TODO: Find the frequency of the elements in the array
+func frequency(arr []int) map[int]int {
+	hashTable := make(map[int]int)
+
+	for i := 0; i < len(arr); i++ {
+		if _, ok := hashTable[arr[i]]; ok {
+			hashTable[arr[i]]++
+		}
+		if _, ok := hashTable[arr[i]]; !ok {
+			hashTable[arr[i]] = 1
+		}
+	}
+	return hashTable
+}
+
 func main() {
 	
 	
