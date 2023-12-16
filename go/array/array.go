@@ -191,6 +191,72 @@ func leaders(arr []int) []int {
 	return leader
 }
 
+// TODO: First repeating element in an array
+func firstRepeated(arr []int) int {
+	hashTable := make(map[int]int)
+
+	for i := 0; i < len(arr); i++ {
+		if _, ok := hashTable[arr[i]]; ok {
+			hashTable[arr[i]]++
+		}
+		if _, ok := hashTable[arr[i]]; !ok {
+			hashTable[arr[i]] = 1
+		}
+	}
+
+	for i := 0; i < len(arr); i++ {
+		if hashTable[arr[i]] != 1 {
+			return i + 1
+		}
+	}
+
+	return -1
+}
+
+// TODO: Is correct parentheses
+func isPar(exp string) bool {
+	stack := []rune{}
+
+	for i := 0; i < len(exp); i++ {
+		if exp[i] == '(' || exp[i] == '{' || exp[i] == '[' {
+			stack = append(stack, rune(exp[i]))
+		} else if exp[i] == ')' || exp[i] == '}' || exp[i] == ']' {
+			if len(stack) == 0 {
+				return false
+			}
+
+			lastBracket := stack[len(stack)-1]
+			stack = stack[:len(stack)-1]
+
+			if (lastBracket == '(' && exp[i] != ')') ||
+				(lastBracket == '{' && exp[i] != '}') ||
+				(lastBracket == '[' && exp[i] != ']') {
+				return false
+			}
+		}
+	}
+
+	return len(stack) == 0
+}
+
+// TODO: First element that occurs at least K number of times
+func firstElementKTime(arr []int, k int) int {
+	occTable := make(map[int]int)
+
+	for i := 0; i < len(arr); i++ {
+		if _, ok := occTable[arr[i]]; ok {
+			occTable[arr[i]]++
+		}
+		if _, ok := occTable[arr[i]]; !ok {
+			occTable[arr[i]] = 1
+		}
+		if occTable[arr[i]] == k {
+			return arr[i]
+		}
+	}
+	return -1
+}
+
 func main() {
 	
 	
