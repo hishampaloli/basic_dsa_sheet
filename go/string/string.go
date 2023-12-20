@@ -50,6 +50,27 @@ func longestCommonPrefix(arr []string) string {
 }
 
 
+func nonRepeatingCharacter(s string) string {
+    letterTable := make(map[rune]bool)
+
+    for _, char := range s {
+        if letterTable[char] {
+            letterTable[char] = false
+        } else {
+            letterTable[char] = true
+        }
+    }
+
+    for _, char := range s {
+        if letterTable[char] {
+            return string(char)
+        }
+    }
+
+    return "$"
+}
+
+
 
 
 func main() {
