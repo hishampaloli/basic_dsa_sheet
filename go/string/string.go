@@ -71,6 +71,31 @@ func nonRepeatingCharacter(s string) string {
 }
 
 
+func isPar(str string) bool {
+    stack := []rune{}
+
+    for _, char := range str {
+        switch char {
+        case '[', '{', '(':
+            stack = append(stack, char)
+        case ']', '}', ')':
+            if len(stack) == 0 {
+                return false
+            }
+
+            lastPushed := stack[len(stack)-1]
+            stack = stack[:len(stack)-1]
+
+            if (lastPushed == '(' && char != ')') ||
+                (lastPushed == '{' && char != '}') ||
+                (lastPushed == '[' && char != ']') {
+                return false
+            }
+        }
+    }
+
+    return len(stack) == 0
+}
 
 
 func main() {
