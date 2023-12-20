@@ -13,8 +13,96 @@ func reverseWords(s string) string {
     return strings.Join(words, ".")
 }
 
+
+
+func isPalindrome(s string) int {
+    for i, j := 0, len(s)-1; i < len(s)/2; i, j = i+1, j-1 {
+        if s[i] != s[j] {
+            return 0
+        }
+    }
+    return 1
+}
+
+
+func longestCommonPrefix(arr []string) string {
+    if len(arr) == 0 {
+        return ""
+    }
+
+    prefix := ""
+    for i := 0; i < len(arr[0]); i++ {
+        check := true
+        for j := 0; j < len(arr); j++ {
+            if arr[0][i] != arr[j][i] {
+                check = false
+                break
+            }
+        }
+        if check {
+            prefix += string(arr[0][i])
+        } else {
+            break
+        }
+    }
+
+    return prefix
+}
+
+
+func nonRepeatingCharacter(s string) string {
+    letterTable := make(map[rune]bool)
+
+    for _, char := range s {
+        if letterTable[char] {
+            letterTable[char] = false
+        } else {
+            letterTable[char] = true
+        }
+    }
+
+    for _, char := range s {
+        if letterTable[char] {
+            return string(char)
+        }
+    }
+
+    return "$"
+}
+
+
+func isPar(str string) bool {
+    stack := []rune{}
+
+    for _, char := range str {
+        switch char {
+        case '[', '{', '(':
+            stack = append(stack, char)
+        case ']', '}', ')':
+            if len(stack) == 0 {
+                return false
+            }
+
+            lastPushed := stack[len(stack)-1]
+            stack = stack[:len(stack)-1]
+
+            if (lastPushed == '(' && char != ')') ||
+                (lastPushed == '{' && char != '}') ||
+                (lastPushed == '[' && char != ']') {
+                return false
+            }
+        }
+    }
+
+    return len(stack) == 0
+}
+
+
 func main() {
     sentence := "i.like.this.program.very.much"
     reversed := reverseWords(sentence)
     fmt.Println(reversed)
+
+	result := isPalindrome("malayalam")
+    fmt.Println(result)
 }
