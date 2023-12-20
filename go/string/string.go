@@ -25,6 +25,33 @@ func isPalindrome(s string) int {
 }
 
 
+func longestCommonPrefix(arr []string) string {
+    if len(arr) == 0 {
+        return ""
+    }
+
+    prefix := ""
+    for i := 0; i < len(arr[0]); i++ {
+        check := true
+        for j := 0; j < len(arr); j++ {
+            if arr[0][i] != arr[j][i] {
+                check = false
+                break
+            }
+        }
+        if check {
+            prefix += string(arr[0][i])
+        } else {
+            break
+        }
+    }
+
+    return prefix
+}
+
+
+
+
 func main() {
     sentence := "i.like.this.program.very.much"
     reversed := reverseWords(sentence)
