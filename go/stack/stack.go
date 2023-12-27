@@ -46,7 +46,6 @@ func main() {
 
     fmt.Println(list.unshift("786"))
     fmt.Println(list.unshift("ready"))
-    fmt.Printf("%+v\n", list)
     fmt.Println(list.shift())
     fmt.Printf("%+v\n", list)
 }
