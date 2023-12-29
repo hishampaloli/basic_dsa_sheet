@@ -52,6 +52,7 @@ func main() {
 	fmt.Println("Enqueue:", q.Enqueue(1))
 	fmt.Println("Enqueue:", q.Enqueue(2))
 	fmt.Println("Dequeue:", *q.Dequeue())
+	fmt.Println(q)
 	fmt.Println("Dequeue:", *q.Dequeue())
 	fmt.Println("Dequeue:", q.Dequeue())
 }
