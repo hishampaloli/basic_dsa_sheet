@@ -91,4 +91,5 @@ func main() {
 	tree.Insert(20)
 	tree.Insert(70)
 
+	fmt.Println("BFS:", tree.BFS())
 }
