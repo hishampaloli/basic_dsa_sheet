@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 /*
-Create or delete after a given value.
+Create or delete before a given value.
 */
 //User defined data type.
 struct node {
@@ -15,34 +15,39 @@ struct node *createNode(int item) {
     newNode->next = NULL;
     return newNode;
 }
-//Function to connect node(Linked List) structure (after a given value).
-void addAfter(struct node **head, int item, int key) {
+//Function to connect node(Linked List) structure (before a given value).
+int addBefore(struct node **head, int item, int key) {
     struct node *newNode = createNode(item);
     if(*head == NULL) {
         *head = newNode;
     }else {
         struct node *temp = *head;
+        struct node *prev;
         while(temp->next != NULL) {
             if(temp->data == key) {
-                newNode->next = temp->next;
-                temp->next = newNode;
-                break;
+                prev->next = newNode;
+                newNode->next = temp;
+                return 0;
             }
+            prev = temp;
             temp = temp->next;
         }
-        temp->next = newNode;
+        printf("Element not found...\n");
     }
+    return 0;
 }
-//Function to delete node(Linked List) structure (after a given value).
-int deleteAfter(struct node **head, int key) {
+//Function to delete node(Linked List) structure (before a given value).
+int deleteBefore(struct node **head, int key) {
     if(*head == NULL) {
         printf("List not exist...\n");
     }else {
         struct node *temp = *head;
         struct node *prev;
+        struct node *pre;
         while(temp->next != NULL) {
-            if(prev->data == key) {
-                prev->next = temp->next;
+            pre = temp->next;
+            if(pre->data == key) {
+                prev->next = pre;
                 return 0;
             }
             prev = temp;
@@ -67,17 +72,19 @@ void display(struct node *head) {
 // Main function.
 int main(void) {
     struct node *head = NULL;
-    addAfter(&head, 10001, 30);
-    addAfter(&head, 10002, 30);
-    addAfter(&head, 10003, 30);
-    addAfter(&head, 30, 10002);
-    deleteAfter(&head, 10001);
+    addBefore(&head, 10, 100);
+    addBefore(&head, 30, 100);                
+    addBefore(&head, 40, 100);                
+    addBefore(&head, 50, 100);                
+    addBefore(&head, 20, 30);                
+    deleteBefore(&head, 50);
     display(head);                
     return 0;
 }
 /*
 -----output-----
-Data 10001      Next 0x561bf5f52300
-Data 30 Next 0x561bf5f522e0
-Data 10003      Next (nil)
+Data 10 Next 0x560e25c84320
+Data 20 Next 0x560e25c842c0
+Data 30 Next 0x560e25c84300
+Data 50 Next (nil)
 */
