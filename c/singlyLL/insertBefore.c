@@ -15,6 +15,19 @@ struct node *createNode(int item) {
     newNode->next = NULL;
     return newNode;
 }
+//Function to connect node(Linked List) structure (insert last).
+void addLast(struct node **head, int item) {
+    struct node *newNode = createNode(item);
+    if(*head == NULL) {
+        *head = newNode;
+    }else {
+        struct node *temp = *head;
+        while(temp->next != NULL) {
+            temp = temp->next;
+        }
+        temp->next = newNode;
+    }
+}
 //Function to connect node(Linked List) structure (before a given value).
 int addBefore(struct node **head, int item, int key) {
     struct node *newNode = createNode(item);
@@ -23,7 +36,7 @@ int addBefore(struct node **head, int item, int key) {
     }else {
         struct node *temp = *head;
         struct node *prev;
-        while(temp->next != NULL) {
+        while(temp != NULL) {
             if(temp->data == key) {
                 prev->next = newNode;
                 newNode->next = temp;
@@ -69,22 +82,25 @@ void display(struct node *head) {
         }
     }
 }
+void sampleNode(struct node **head) {
+    addLast(head, 10);
+    addLast(head, 20);
+    addLast(head, 30);
+    addLast(head, 50);
+}
 // Main function.
 int main(void) {
     struct node *head = NULL;
-    addBefore(&head, 10, 100);
-    addBefore(&head, 30, 100);                
-    addBefore(&head, 40, 100);                
-    addBefore(&head, 50, 100);                
-    addBefore(&head, 20, 30);                
-    deleteBefore(&head, 50);
+    sampleNode(&head);  // To create sample nodes.
+    addBefore(&head, 40, 50);
+    deleteBefore(&head, 40);
     display(head);                
     return 0;
 }
 /*
 -----output-----
-Data 10 Next 0x560e25c84320
-Data 20 Next 0x560e25c842c0
-Data 30 Next 0x560e25c84300
+Data 10 Next 0x555c6597c2c0
+Data 20 Next 0x555c6597c320
+Data 40 Next 0x555c6597c300
 Data 50 Next (nil)
 */
