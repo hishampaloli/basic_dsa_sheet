@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 /*
-Create or delete before a given value.
+Replace and delete at a particular node.
 */
 //User defined data type.
 struct node {
@@ -28,40 +28,49 @@ void addLast(struct node **head, int item) {
         temp->next = newNode;
     }
 }
-//Function to connect node(Linked List) structure (before a given value).
-int addBefore(struct node **head, int item, int key) {
+// Function to replace node(Linked List) structure (with a given value).
+void replaceNode(struct node **head, int item, int key) {
     struct node *newNode = createNode(item);
-    if(*head == NULL) {
+    if (*head == NULL) {
         *head = newNode;
-    }else {
+    } else {
         struct node *temp = *head;
-        struct node *prev;
-        while(temp != NULL) {
-            if(temp->data == key) {
-                prev->next = newNode;
-                newNode->next = temp;
-                return 0;
+        struct node *prev = NULL;
+        while (temp != NULL) {
+            if (temp->data == key) {
+                newNode->next = temp->next;
+                if (prev == NULL) {
+                    *head = newNode;
+                } else {
+                    prev->next = newNode;
+                }
+                free(temp);
+                break;
             }
             prev = temp;
             temp = temp->next;
         }
-        printf("Element not found...\n");
+        if (temp == NULL) {
+            printf("Element not found...\n");
+        }
     }
-    return 0;
 }
-//Function to delete node(Linked List) structure (before a given value).
-int deleteBefore(struct node **head, int key) {
-    if(*head == NULL) {
+// Function to delete node(Linked List) structure (with a given value).
+int deleteNode(struct node **head, int key) {
+    if (*head == NULL) {
         printf("List not exist...\n");
-    }else {
+    } else {
         struct node *temp = *head;
-        struct node *prev;
-        struct node *pre;
-        while(temp->next != NULL) {
-            pre = temp->next;
-            if(pre->data == key) {
-                prev->next = pre;
-                return 0;
+        struct node *prev = NULL;
+        while (temp != NULL) {
+            if (temp->data == key) {
+                if (prev == NULL) {
+                    *head = temp->next;
+                } else {
+                    prev->next = temp->next;
+                }
+                free(temp);
+                return 1; 
             }
             prev = temp;
             temp = temp->next;
@@ -86,21 +95,22 @@ void sampleNode(struct node **head) {
     addLast(head, 10);
     addLast(head, 20);
     addLast(head, 30);
+    addLast(head, 60);
     addLast(head, 50);
 }
 // Main function.
 int main(void) {
     struct node *head = NULL;
     sampleNode(&head);  // To create sample nodes.
-    addBefore(&head, 40, 50);
-    deleteBefore(&head, 40);
+    replaceNode(&head, 40, 60);
+    deleteNode(&head , 10);
     display(head);                
     return 0;
 }
 /*
 -----output-----
-Data 10 Next 0x555c6597c2c0
-Data 20 Next 0x555c6597c320
-Data 40 Next 0x555c6597c300
+Data 20 Next 0x5638ffcd62e0
+Data 30 Next 0x5638ffcd6340
+Data 40 Next 0x5638ffcd6320
 Data 50 Next (nil)
 */
